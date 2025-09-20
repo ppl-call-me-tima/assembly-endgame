@@ -13,6 +13,12 @@ body {
   justify-content: center;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .upper-box {
   max-width: 20rem;
 }
@@ -46,7 +52,7 @@ header>p {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.25rem;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .lang-grid>span {
@@ -58,6 +64,7 @@ header>p {
   display: flex;
   justify-content: center;
   gap: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 .word-revealer>span {
@@ -66,4 +73,24 @@ header>p {
   padding: 0.5rem 0.95rem;
   font-size: 1.125rem;
   font-weight: bold;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.35rem;
+}
+
+.keyboard>button {
+  color: black;
+  font-family: "Hanken Grotesk";
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+
+  border: 1px solid white;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+
+  cursor: pointer;
 }
