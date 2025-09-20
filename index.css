@@ -45,10 +45,25 @@ header>p {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.25em;
+  gap: 0.25rem;
+  margin-bottom: 1em;
 }
 
 .lang-grid>span {
   border-radius: 3px;
   padding: 0.1rem 0.2rem;
+}
+
+.word-revealer {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.word-revealer>span {
+  border-bottom: 1px solid #F9F4DA;
+  background-color: #323232;
+  padding: 0.5rem 0.95rem;
+  font-size: 1.125rem;
+  font-weight: bold;
 }
