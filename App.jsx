@@ -41,6 +41,8 @@ export default function AssemblyEndgame() {
       <div className="keyboard">
         {keyboardChips}
       </div>
+
+      <button className="new-game">New Game</button>
     </main>
   )
 }
