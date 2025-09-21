@@ -69,6 +69,8 @@ header>p {
 }
 
 .word-revealer>span {
+  height: 2.75rem;
+  aspect-ratio: 1;
   border-bottom: 1px solid #F9F4DA;
   background-color: #323232;
   padding: 0.5rem 0.95rem;

@@ -25,13 +25,17 @@ export default function AssemblyEndgame() {
       color: "#F9F4DA",
     }
 
-    return <span key={index} style={styles}>{letter.toUpperCase()}</span>
+    return (
+      <span key={index} style={styles}>
+        {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
+      </span>
+    )
   })
 
   const keyboardChips = alphabets.map(letter => {
     const isGuessed = guessedLetters.includes(letter)
     const isCorrect = currentWord.includes(letter)
-    
+
     const className = clsx({
       unchosen: !isGuessed,
       correct: isGuessed && isCorrect,
