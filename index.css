@@ -99,6 +99,18 @@ header>p {
   cursor: pointer;
 }
 
+button.unchosen {
+  background-color: #FCBA29;
+}
+
+button.correct {
+  background-color: #10A95B;
+}
+
+button.incorrect {
+  background-color: #EC5D49;
+}
+
 button.new-game {
   background-color: #11B5E5;
   border: 1px solid white;
