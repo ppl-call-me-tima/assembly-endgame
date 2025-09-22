@@ -48,6 +48,12 @@ header>p {
   height: 5rem;
 }
 
+div.farewell {
+  background-color: #7A5EA7;
+  border: 1px dashed #282726;
+  border-radius: 4px;
+}
+
 div.win {
   background-color: #10A95B;
 }

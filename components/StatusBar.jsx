@@ -1,9 +1,11 @@
 import { clsx } from "clsx"
+import { getFarewellText } from "../utils"
 
 export default function StatusBar(props) {
   const className = clsx(["status-bar", {
     win: props.isGameWon,
     lose: props.isGameLost,
+    farewell: !props.isGameOver && props.langLost,
   }])
 
   return (
@@ -24,6 +26,9 @@ export default function StatusBar(props) {
         </p>
       }
 
+      {!props.isGameOver && props.langLost &&
+        <p>{getFarewellText(props.langLost)}</p>
+      }
     </div>
   )
 }

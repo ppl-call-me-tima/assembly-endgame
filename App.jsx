@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { clsx } from "clsx"
 
 import Header from "./components/Header"
@@ -16,6 +16,8 @@ export default function AssemblyEndgame() {
   const isGameLost = wrongGuessCount >= languages.length - 1
   const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
   const isGameOver = isGameLost || isGameWon
+
+  const langLost = (wrongGuessCount > 0 && !currentWord.includes(guessedLetters[guessedLetters.length - 1])) ? languages[wrongGuessCount - 1].name : null
 
   function letterPressed(letter) {
     setGuessedLetters(prevGuessedLetters => (
@@ -63,7 +65,12 @@ export default function AssemblyEndgame() {
     <main>
       <div className="upper-box">
         <Header />
-        <StatusBar isGameOver={isGameOver} isGameWon={isGameWon} isGameLost={isGameLost} />
+        <StatusBar
+          isGameOver={isGameOver}
+          isGameWon={isGameWon}
+          isGameLost={isGameLost}
+          langLost={langLost}
+        />
         <Languages wrongGuessCount={wrongGuessCount} />
 
         <div className="word-revealer">
