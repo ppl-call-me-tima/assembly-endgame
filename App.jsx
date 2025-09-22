@@ -32,13 +32,13 @@ export default function AssemblyEndgame() {
   const alphabets = "abcdefghijklmnopqrstuvwxyz".split("")
 
   const wordRevealerChips = array.map((letter, index) => {
-    const styles = {
-      color: "#F9F4DA",
-    }
+    const className = clsx({
+      "lost-reveal": isGameLost && !guessedLetters.includes(letter)
+    })
 
     return (
-      <span key={index} style={styles}>
-        {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
+      <span key={index} className={className}>
+        {guessedLetters.includes(letter) || isGameLost ? letter.toUpperCase() : ""}
       </span>
     )
   })
