@@ -56,9 +56,25 @@ header>p {
   margin-bottom: 1rem;
 }
 
-.lang-grid>span {
+span.lang-chip {
   border-radius: 3px;
   padding: 0.1rem 0.2rem;
+  position: relative;
+}
+
+span.lost::before {
+  color: white;
+  content: "X";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .word-revealer {

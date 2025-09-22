@@ -9,6 +9,8 @@ export default function AssemblyEndgame() {
   const [currentWord, setCurrentWord] = useState("react")
   const [guessedLetters, setGuessedLetters] = useState([])
 
+  const wrongGuessCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length
+
   function letterPressed(letter) {
     setGuessedLetters(prevGuessedLetters => (
       prevGuessedLetters.includes(letter) ?
@@ -56,7 +58,7 @@ export default function AssemblyEndgame() {
       <div className="upper-box">
         <Header />
         <StatusBar />
-        <Languages />
+        <Languages wrongGuessCount={wrongGuessCount} />
 
         <div className="word-revealer">
           {wordRevealerChips}
