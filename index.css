@@ -143,6 +143,10 @@ button.incorrect {
   background-color: #EC5D49;
 }
 
+button.disabled {
+  opacity: 0.25;
+}
+
 button.new-game {
   background-color: #11B5E5;
   border: 1px solid white;

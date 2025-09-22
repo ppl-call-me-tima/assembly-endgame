@@ -50,12 +50,14 @@ export default function AssemblyEndgame() {
       unchosen: !isGuessed,
       correct: isGuessed && isCorrect,
       incorrect: isGuessed && !isCorrect,
+      disabled: isGameOver,
     })
 
     return (
       <button
         key={letter}
         className={className}
+        disabled={isGameOver}
         onClick={() => { letterPressed(letter) }}
       >{letter.toUpperCase()}</button>
     )
