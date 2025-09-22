@@ -1,5 +1,6 @@
 import { useState, useRef } from "react"
 import { clsx } from "clsx"
+import Confetti from 'react-confetti'
 
 import Header from "./components/Header"
 import StatusBar from "./components/StatusBar"
@@ -71,6 +72,7 @@ export default function AssemblyEndgame() {
 
   return (
     <main>
+      {isGameWon && <Confetti />}
       <div className="upper-box">
         <Header />
         <StatusBar
