@@ -6,9 +6,10 @@ import StatusBar from "./components/StatusBar"
 import Languages from "./components/Languages"
 
 import { languages } from "./languages"
+import { getRandomWord } from "./utils"
 
 export default function AssemblyEndgame() {
-  const [currentWord, setCurrentWord] = useState("react")
+  const [currentWord, setCurrentWord] = useState(() => getRandomWord())
   const [guessedLetters, setGuessedLetters] = useState([])
 
   const wrongGuessCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length
