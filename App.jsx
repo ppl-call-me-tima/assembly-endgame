@@ -5,11 +5,17 @@ import Header from "./components/Header"
 import StatusBar from "./components/StatusBar"
 import Languages from "./components/Languages"
 
+import { languages } from "./languages"
+
 export default function AssemblyEndgame() {
   const [currentWord, setCurrentWord] = useState("react")
   const [guessedLetters, setGuessedLetters] = useState([])
 
   const wrongGuessCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length
+
+  const isGameLost = wrongGuessCount >= languages.length - 1
+  const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
+  const isGameOver = isGameLost || isGameWon
 
   function letterPressed(letter) {
     setGuessedLetters(prevGuessedLetters => (
@@ -57,7 +63,7 @@ export default function AssemblyEndgame() {
     <main>
       <div className="upper-box">
         <Header />
-        <StatusBar />
+        <StatusBar isGameOver={isGameOver} isGameWon={isGameWon} isGameLost={isGameLost} />
         <Languages wrongGuessCount={wrongGuessCount} />
 
         <div className="word-revealer">
@@ -69,7 +75,7 @@ export default function AssemblyEndgame() {
         {keyboardChips}
       </div>
 
-      <button className="new-game">New Game</button>
+      {isGameOver && <button className="new-game">New Game</button>}
     </main>
   )
 }

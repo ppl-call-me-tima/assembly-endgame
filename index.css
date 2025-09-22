@@ -39,13 +39,21 @@ header>p {
 
 .status-bar {
   display: flex;
+  align-items: center;
   justify-content: center;
   text-align: center;
   color: #F9F4DA;
   border-radius: 5px;
   margin-block: 1.5rem;
+  height: 5rem;
+}
 
+div.win {
   background-color: #10A95B;
+}
+
+div.lose {
+  background-color: #BA2A2A;
 }
 
 .lang-grid {
