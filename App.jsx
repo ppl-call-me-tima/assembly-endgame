@@ -64,6 +64,11 @@ export default function AssemblyEndgame() {
     )
   })
 
+  function resetGame() {
+    setCurrentWord(getRandomWord())
+    setGuessedLetters([])
+  }
+
   return (
     <main>
       <div className="upper-box">
@@ -85,7 +90,7 @@ export default function AssemblyEndgame() {
         {keyboardChips}
       </div>
 
-      {isGameOver && <button className="new-game">New Game</button>}
+      {isGameOver && <button className="new-game" onClick={resetGame}>New Game</button>}
     </main>
   )
 }
